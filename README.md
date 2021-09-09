@@ -1,6 +1,6 @@
-# child-process
+# child_process
 
-## child-process
+## child_process
 
 > 墙裂推荐使用这个，够用且没有额外的心智负担。
 
