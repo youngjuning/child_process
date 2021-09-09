@@ -1,14 +1,8 @@
 # child-process
 
-## exec-sh、child-process（推荐）
+## child-process
 
-```js
-const execSh = require('exec-sh').promise;
-
-execSh('yarn install',{
-  shell: true
-})
-```
+> 墙裂推荐使用这个，够用且没有额外的心智负担。
 
 ```js
 const { spawnSync } = require('child_process');
@@ -16,11 +10,23 @@ const { spawnSync } = require('child_process');
 spawnSync("yarn install",{
   shell: true,
   stdio: 'inherit'
-})
+});
 ```
 
 ![image](https://user-images.githubusercontent.com/13204332/132640641-5cf686eb-1f62-48d5-99ef-93e76324f101.png)
 
+
+## exec-sh
+
+```js
+const execSh = require('exec-sh').promise;
+
+execSh('yarn install',{
+  shell: true
+});
+```
+
+![image](https://user-images.githubusercontent.com/13204332/132640641-5cf686eb-1f62-48d5-99ef-93e76324f101.png)
 
 ## execa
 
@@ -29,11 +35,12 @@ const execa = require("execa");
 
 execa.commandSync('yarn install',{
   stdout: "inherit",
+  stderr: "inherit",
   shell: true,
-})
+});
 ```
 
-![image](https://user-images.githubusercontent.com/13204332/132640461-50b16c2d-9f9b-48b0-b842-65b193feef4b.png)
+![image](https://user-images.githubusercontent.com/13204332/132640641-5cf686eb-1f62-48d5-99ef-93e76324f101.png)
 
 ## shelljs
 
